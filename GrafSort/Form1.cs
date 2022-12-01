@@ -14,8 +14,8 @@ namespace GrafSort
     public partial class Form1 : Form
     {
        // public bool start=false;
-        public double a, b, h;
-        public double x, y;
+        //public double a, b, h;
+        //public double x, y;
         public int maxNumderArray = 100000; // максимальное число массива
         public int leghtArray = 30000; // длинна массива
         public int diapp = 50000;
@@ -120,6 +120,12 @@ HeapSort    10
         {
             textBox_diapp.Enabled = radioButton2.Checked;
           
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 formViz = new Form2();
+            formViz.ShowDialog();
         }
 
         public Form1()

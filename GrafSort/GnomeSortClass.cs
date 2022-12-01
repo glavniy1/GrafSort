@@ -43,5 +43,76 @@ namespace GrafSort
 
             return unsortedArray;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private static int ee = 0;
+       private static int index;
+        private static int nextIndex;
+        //Гномья сортировка
+        public static int[] GnomeSort(int[] unsortedArray, int step, bool start)
+        {
+            if (start == true)
+            {
+                index = 1;
+                nextIndex = index + 1;
+                start =false;
+            }
+            
+
+            while (index < unsortedArray.Length)
+            {
+                if (unsortedArray[index - 1] < unsortedArray[index])
+                {
+                    index = nextIndex;
+                    nextIndex++;
+                }
+                else
+                {
+                    var temp = unsortedArray[index - 1];
+                    unsortedArray[index - 1] = unsortedArray[index];
+                    unsortedArray[index] = temp;
+                    index--;
+                    if (index == 0)
+                    {
+                        index = nextIndex;
+                        nextIndex++;
+                    }
+
+
+                    ee++;
+                    if (ee > step)
+                    {
+                        ee = 0;
+                        return unsortedArray;
+                    }
+
+
+                }
+
+
+
+
+
+
+            }
+
+            return unsortedArray;
+        }
     }
+
+
+
+
 }
