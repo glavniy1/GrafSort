@@ -39,7 +39,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -99,15 +98,15 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(946, 444);
+            this.textBox1.Location = new System.Drawing.Point(1005, 444);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 20);
+            this.textBox1.Size = new System.Drawing.Size(136, 20);
             this.textBox1.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(877, 447);
+            this.label1.Location = new System.Drawing.Point(936, 447);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 4;
@@ -117,13 +116,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(946, 476);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(122, 28);
-            this.progressBar1.TabIndex = 5;
             // 
             // comboBox1
             // 
@@ -229,10 +221,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(457, 437);
+            this.textBox2.Location = new System.Drawing.Point(457, 436);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(414, 158);
+            this.textBox2.Size = new System.Drawing.Size(473, 195);
             this.textBox2.TabIndex = 13;
             // 
             // button3
@@ -247,9 +239,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(946, 516);
+            this.button4.Location = new System.Drawing.Point(1005, 480);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 38);
+            this.button4.Size = new System.Drawing.Size(136, 38);
             this.button4.TabIndex = 15;
             this.button4.Text = "Визуальное сравнение";
             this.button4.UseVisualStyleBackColor = true;
@@ -259,7 +251,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 658);
+            this.ClientSize = new System.Drawing.Size(1168, 661);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox2);
@@ -270,7 +262,6 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -296,7 +287,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;

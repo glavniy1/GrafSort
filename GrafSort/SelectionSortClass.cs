@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GrafSort
 {
@@ -51,6 +53,81 @@ namespace GrafSort
 
             return SelectionSort1(array, currentIndex + 1);
         }
+
+
+
+
+
+
+
+
+        public static int[] SelectionSort(int[] array, Chart chart, int step, CancellationToken token)
+        {
+
+            return SelectionSort10(array,  chart,  step, token);
+        }
+
+
+
+
+
+
+
+        public static int[] SelectionSort10(int[] array, Chart chart, int step, CancellationToken token, int currentIndex = 0)
+        {
+            if (currentIndex == array.Length)
+                return array;
+
+            var index = IndexOfMin(array, currentIndex, token);
+            if (index != currentIndex)
+            {
+                Swap(ref array[index], ref array[currentIndex]);
+                VisualizationClass.Visualization(array, chart, step);
+            }
+
+            return SelectionSort10(array, chart, step, token ,currentIndex + 1);
+        }
+
+
+
+
+
+
+        static int IndexOfMin(int[] array, int n, CancellationToken token)
+        {
+            int result = n;
+            for (var i = n; i < array.Length; ++i)
+            {
+                if (token.IsCancellationRequested)
+                {
+
+
+                    break;
+                }
+                if (array[i] < array[result])
+                {
+                    result = i;
+                }
+            }
+
+            return result;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

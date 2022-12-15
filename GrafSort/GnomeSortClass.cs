@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GrafSort
 {
@@ -110,6 +112,90 @@ namespace GrafSort
 
             return unsortedArray;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        static void Swapf(ref int item1, ref int item2)
+        {
+            var temp = item1;
+            item1 = item2;
+            item2 = temp;
+         
+        }
+
+        //Гномья сортировка
+        public static int[] GnomeSort(int[] unsortedArray, Chart chart, int step, CancellationToken token)
+        {
+            var index = 1;
+            var nextIndex = index + 1;
+
+            while (index < unsortedArray.Length)
+            {
+                if (token.IsCancellationRequested)
+                {
+
+
+                    break;
+                }
+                if (unsortedArray[index - 1] < unsortedArray[index])
+                {
+                    index = nextIndex;
+                    nextIndex++;
+                }
+                else
+                {
+                    Swapf(ref unsortedArray[index - 1], ref unsortedArray[index]);
+                    VisualizationClass.Visualization(unsortedArray, chart, step);
+                    index--;
+                    if (index == 0)
+                    {
+                        index = nextIndex;
+                        nextIndex++;
+                    }
+                }
+            }
+
+            return unsortedArray;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 

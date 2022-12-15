@@ -133,7 +133,8 @@ HeapSort    10
             InitializeComponent();
           //  comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.SelectedIndex = 0;
-          //  button2.SelectedIndex = 0;
+            //  button2.SelectedIndex = 0;
+            button2.Enabled = false;
         }
         
         private void Form1_Load(object sender, EventArgs e)
@@ -149,6 +150,7 @@ HeapSort    10
 
         public void button1_Click(object sender, EventArgs e)
         {
+            button2.Enabled = true;
             this.gfaf1.Series[0].Points.Clear();
             this.gfaf1.Series[1].Points.Clear();
 

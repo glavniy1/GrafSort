@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GrafSort
 {
@@ -35,26 +37,33 @@ namespace GrafSort
         //    leftItem = rightItem;
         //    rightItem = temp;
         //}
-        public static int ee = 0;
-        public static int[] BubbleSort(int[] array,int step)
+     
+        public static int[] BubbleSort(int[] array, Chart chart, int step, CancellationToken token)
         {
             int temp;
             for (int i = 0; i < array.Length; i++)
             {
+                if (token.IsCancellationRequested)
+                {
+
+
+                    break;
+                }
                 for (int j = i; j < array.Length; j++)
                 {
+                    if (token.IsCancellationRequested)
+                    {
+
+
+                        break;
+                    }
                     if (array[i] > array[j])
                     {
                         temp = array[j];
                         array[j] = array[i];
                         array[i] = temp;
-                        //Swap(ref array[i], ref array[j]);
-                        ee++;
-                        if (ee > step)
-                        {
-                            ee = 0;
-                            return array;
-                        }
+                        VisualizationClass.Visualization(array, chart, step);
+                       
                     }
                 }
 
